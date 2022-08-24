@@ -9,6 +9,8 @@
 %endif
 
 %define _disable_ld_no_undefined 1
+# Fix for segfault https://gitlab.gnome.org/GNOME/tracker-miners/-/issues/7
+%global optflags %optflags -O0
 
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 %global tracker_version 2.2.0
@@ -19,7 +21,7 @@
 
 Name:		tracker2-miners
 Version:	2.3.5
-Release:	4
+Release:	5
 Summary:	Tracker miners and metadata extractors
 Group:		Graphical desktop/GNOME
 
