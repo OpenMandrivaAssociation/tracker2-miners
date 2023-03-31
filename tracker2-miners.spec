@@ -21,7 +21,7 @@
 
 Name:		tracker2-miners
 Version:	2.3.5
-Release:	8
+Release:	9
 Summary:	Tracker miners and metadata extractors
 Group:		Graphical desktop/GNOME
 
