@@ -89,7 +89,7 @@ This package contains various miners and metadata extractors for tracker.
 
 %build
 %meson -Dfunctional_tests=false \
-       -Dsystemd_user_services=%{_userunitdir} \
+       -Dsystemd_user_services=true \
        -Dmp3=true
 %meson_build
 
@@ -100,10 +100,6 @@ This package contains various miners and metadata extractors for tracker.
 rm -rf %{buildroot}%{_datadir}/tracker-tests
 
 %find_lang %{oname}
-
-
-%post
-%systemd_user_post %{systemd_units}
 
 %files -f %{oname}.lang
 %license COPYING
