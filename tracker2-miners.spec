@@ -20,8 +20,8 @@
 %define oname tracker-miners
 
 Name:		tracker2-miners
-Version:	3.0.1
-Release:	1
+Version:	2.3.5
+Release:	12
 Summary:	Tracker miners and metadata extractors
 Group:		Graphical desktop/GNOME
 
@@ -84,12 +84,12 @@ This package contains various miners and metadata extractors for tracker.
 
 
 %prep
-%autosetup -p1 -n tracker-miners-3.0.1
+%autosetup -p1 -n %oname-%version
 
 
 %build
 %meson -Dfunctional_tests=false \
-       -Dsystemd_user_services=true \
+       -Dsystemd_user_services=%{_userunitdir} \
        -Dmp3=true
 %meson_build
 
